@@ -1,0 +1,897 @@
+{
+ "audit": {
+  "appointment rows": 271850,
+  "product-sale rows": 40018,
+  "stylist rows": 197,
+  "outlet rows": 22,
+  "total rows (4 tables)": 312087,
+  "exact duplicate appointment rows": 1083,
+  "status = Cancelled (share)": 0.1341,
+  "Cancelled with no cancellation time or after slot (hidden no-shows)": 24483,
+  "walk-ins without client_id (share)": 0.2742,
+  "distinct raw service names": 37
+ },
+ "clean": {
+  "rows after de-duplication": 270767,
+  "canonical services": 10,
+  "no-shows recovered from 'Cancelled'": 24390,
+  "true cancellations with notice": 11918,
+  "no-show rate among booked appointments": 0.1241,
+  "walk-in share of visits": 0.2741
+ },
+ "baseline": {
+  "p0_noshow": 0.12350373951938574,
+  "rev_per_visit_mean": 1165.4433397736918,
+  "rev_per_visit_sd": 974.9404306628242,
+  "retention_60d_proxy": 0.3078541325624325
+ },
+ "design": {
+  "alpha": 0.05,
+  "power": 0.8,
+  "mde_pp": 1.5,
+  "p0": 0.12350373951938574,
+  "p1": 0.10850373951938574,
+  "n_per_arm_exact": 7147.495339313023,
+  "n_per_arm_closed": 7150.547248723572,
+  "n_per_arm_adj": 7524,
+  "n_total": 15048,
+  "weeks": 9,
+  "excl": 0.05,
+  "enrol_table": [
+   {
+    "weeks": 1,
+    "unique_clients_available": 2097
+   },
+   {
+    "weeks": 2,
+    "unique_clients_available": 4110
+   },
+   {
+    "weeks": 3,
+    "unique_clients_available": 5979
+   },
+   {
+    "weeks": 4,
+    "unique_clients_available": 7677
+   },
+   {
+    "weeks": 5,
+    "unique_clients_available": 9420
+   },
+   {
+    "weeks": 6,
+    "unique_clients_available": 11064
+   },
+   {
+    "weeks": 7,
+    "unique_clients_available": 12681
+   },
+   {
+    "weeks": 8,
+    "unique_clients_available": 14231
+   },
+   {
+    "weeks": 9,
+    "unique_clients_available": 15707
+   },
+   {
+    "weeks": 10,
+    "unique_clients_available": 17110
+   },
+   {
+    "weeks": 11,
+    "unique_clients_available": 18537
+   },
+   {
+    "weeks": 12,
+    "unique_clients_available": 19830
+   }
+  ],
+  "sensitivity": [
+   {
+    "MDE (pp)": 1.0,
+    "power": 0.8,
+    "n per arm": 17254
+   },
+   {
+    "MDE (pp)": 1.0,
+    "power": 0.9,
+    "n per arm": 23099
+   },
+   {
+    "MDE (pp)": 1.5,
+    "power": 0.8,
+    "n per arm": 7524
+   },
+   {
+    "MDE (pp)": 1.5,
+    "power": 0.9,
+    "n per arm": 10073
+   },
+   {
+    "MDE (pp)": 2.0,
+    "power": 0.8,
+    "n per arm": 4150
+   },
+   {
+    "MDE (pp)": 2.0,
+    "power": 0.9,
+    "n per arm": 5555
+   },
+   {
+    "MDE (pp)": 2.5,
+    "power": 0.8,
+    "n per arm": 2602
+   },
+   {
+    "MDE (pp)": 2.5,
+    "power": 0.9,
+    "n per arm": 3483
+   }
+  ]
+ },
+ "srm": {
+  "n_control": 7044,
+  "n_treatment": 6956,
+  "share_treatment": 0.49685714285714283,
+  "chi2": 0.5531428571428572,
+  "p": 0.45703636040145645,
+  "min_p_outlet": 0.03318871913691822,
+  "bonferroni_threshold_outlet": 0.002272727272727273,
+  "min_p_week": 0.09451834113446089,
+  "outlet_flags": 0
+ },
+ "balance": {
+  "max_abs_smd": 0.03778005803769333,
+  "omnibus_lr_p": 0.11902563350776668,
+  "min_p_covariate": 0.02542132274728277,
+  "table": [
+   {
+    "covariate": "is_new_client",
+    "control": 0.2961,
+    "treatment": 0.279,
+    "SMD": -0.0378,
+    "p": 0.0254
+   },
+   {
+    "covariate": "pre_visits_12m",
+    "control": 2.2541,
+    "treatment": 2.2954,
+    "SMD": 0.0217,
+    "p": 0.2
+   },
+   {
+    "covariate": "pre_avg_spend_f",
+    "control": 1074.6285,
+    "treatment": 1078.2449,
+    "SMD": 0.0093,
+    "p": 0.583
+   },
+   {
+    "covariate": "pre_noshow_rate_f",
+    "control": 0.0665,
+    "treatment": 0.0694,
+    "SMD": 0.0172,
+    "p": 0.3077
+   },
+   {
+    "covariate": "weekend_appt",
+    "control": 0.2832,
+    "treatment": 0.2851,
+    "SMD": 0.0041,
+    "p": 0.8075
+   },
+   {
+    "covariate": "female",
+    "control": 0.7482,
+    "treatment": 0.7401,
+    "SMD": -0.0185,
+    "p": 0.2737
+   },
+   {
+    "covariate": "age_18-24",
+    "control": 0.225,
+    "treatment": 0.2201,
+    "SMD": -0.0118,
+    "p": 0.4844
+   },
+   {
+    "covariate": "age_25-34",
+    "control": 0.3734,
+    "treatment": 0.384,
+    "SMD": 0.0219,
+    "p": 0.1954
+   },
+   {
+    "covariate": "age_35-44",
+    "control": 0.2531,
+    "treatment": 0.2592,
+    "SMD": 0.0139,
+    "p": 0.4102
+   },
+   {
+    "covariate": "age_45+",
+    "control": 0.1485,
+    "treatment": 0.1367,
+    "SMD": -0.0337,
+    "p": 0.0463
+   },
+   {
+    "covariate": "chan_App",
+    "control": 0.3691,
+    "treatment": 0.3864,
+    "SMD": 0.0357,
+    "p": 0.0346
+   },
+   {
+    "covariate": "chan_Phone",
+    "control": 0.2771,
+    "treatment": 0.2697,
+    "SMD": -0.0166,
+    "p": 0.3247
+   },
+   {
+    "covariate": "chan_WhatsApp chat",
+    "control": 0.2012,
+    "treatment": 0.1995,
+    "SMD": -0.0041,
+    "p": 0.8103
+   },
+   {
+    "covariate": "chan_Website",
+    "control": 0.1526,
+    "treatment": 0.1443,
+    "SMD": -0.0233,
+    "p": 0.1685
+   }
+  ]
+ },
+ "ab": {
+  "no_show": {
+   "control": 0.11939239068710959,
+   "treatment": 0.0930132259919494,
+   "diff": -0.02637916469516019,
+   "se": 0.005201696762086303,
+   "lo": -0.036574490348849346,
+   "hi": -0.016183839041471033,
+   "boot_lo": -0.03645538729856754,
+   "boot_hi": -0.01627582265291135,
+   "p": 3.9518723676287637e-07,
+   "rr": 0.7790548916614645,
+   "rr_lo": 0.7070402833247101,
+   "rr_hi": 0.858404448142205
+  },
+  "cancelled_notice": {
+   "control": 0.057779670641680866,
+   "treatment": 0.053910293271995396,
+   "diff": -0.00386937736968547,
+   "se": 0.0038811407634775667,
+   "lo": -0.0114764132661015,
+   "hi": 0.0037376585267305607,
+   "boot_lo": -0.010858429018746533,
+   "boot_hi": 0.003819126404667742,
+   "p": 0.3187795143608657,
+   "rr": 0.9330322010022987,
+   "rr_lo": 0.8141228469474907,
+   "rr_hi": 1.0693092465974519
+  },
+  "rescheduled": {
+   "control": 0.009795570698466781,
+   "treatment": 0.019838987924094307,
+   "diff": 0.010043417225627526,
+   "se": 0.0020428137233305934,
+   "lo": 0.006039502327899563,
+   "hi": 0.014047332123355488,
+   "boot_lo": 0.0060197317183797285,
+   "boot_hi": 0.014058167685972246,
+   "p": 8.812203334468873e-07,
+   "rr": 2.025301897642323,
+   "rr_lo": 1.5198899784716984,
+   "rr_hi": 2.698779408176731
+  },
+  "opted_out": {
+   "control": 0.007808063600227144,
+   "treatment": 0.010207015526164463,
+   "diff": 0.002398951925937319,
+   "se": 0.0015976768104239722,
+   "lo": -0.0007324946224936666,
+   "hi": 0.005530398474368304,
+   "boot_lo": -0.0006021095037550878,
+   "boot_hi": 0.005424306152177754,
+   "p": 0.13321978454102568,
+   "rr": 1.307240315750954,
+   "rr_lo": 0.9207277633104708,
+   "rr_hi": 1.8560070752948699
+  },
+  "retained_60d": {
+   "control": 0.537052810902896,
+   "treatment": 0.5419781483611271,
+   "diff": 0.004925337458231094,
+   "se": 0.008425752259757556,
+   "lo": -0.011589136970893716,
+   "hi": 0.021439811887355904,
+   "boot_lo": -0.01227854431146497,
+   "boot_hi": 0.022015182069234373,
+   "p": 0.5588452292865591,
+   "rr": 1.0091710486533914,
+   "rr_lo": 0.9787504457309792,
+   "rr_hi": 1.0405371562100025
+  },
+  "rev_per_completed_visit": {
+   "control": 1095.6242360747337,
+   "treatment": 1092.1100759144238,
+   "diff": -3.5141601603099843,
+   "se": 10.81653140753418,
+   "lo": -24.714561719076976,
+   "hi": 17.686241398457007,
+   "boot_lo": -25.023305956746178,
+   "boot_hi": 17.69623992865881,
+   "p": 0.7452718152869614,
+   "pct": -0.003207450186480066,
+   "pct_lo": -0.022557516441605228,
+   "pct_hi": 0.0161426160686451
+  },
+  "rev_per_booked_appt": {
+   "control": 890.7779670641681,
+   "treatment": 909.9870615296147,
+   "diff": 19.209094465446583,
+   "se": 11.358469262452472,
+   "lo": -3.0535052889602596,
+   "hi": 41.471694219853426,
+   "boot_lo": -3.7169377957463694,
+   "boot_hi": 42.16411364742899,
+   "p": 0.09082673452752354,
+   "pct": 0.02156440232660451,
+   "pct_lo": -0.0034279084147355175,
+   "pct_hi": 0.04655671306794454
+  }
+ },
+ "ab_decision": {
+  "decision": "GO",
+  "primary_ci_below_zero": true,
+  "guardrails": {
+   "Opt-out of messages (increase must stay below +1.0 pp)": true,
+   "Revenue per completed visit (drop must stay above -3%)": true,
+   "60-day retention (drop must stay above -2 pp)": true,
+   "Cancellations with notice (increase must stay below +2 pp)": true
+  }
+ },
+ "naive": {
+  "Coimbatore": {
+   "rpv_q2": 1198.5156891736488,
+   "rpv_q3": 1221.3289760348584,
+   "rpv_change": 0.019034616790823078,
+   "vis_change": 0.006924057685302465,
+   "rpv_change_2025_same_quarters": -0.011099765801585337
+  },
+  "Control": {
+   "rpv_q2": 1109.2259354470152,
+   "rpv_q3": 1090.957709084013,
+   "rpv_change": -0.01646934657693533,
+   "vis_change": -0.006819997599029626,
+   "rpv_change_2025_same_quarters": 0.011530937027175225
+  }
+ },
+ "did": {
+  "rpv": {
+   "b": 0.0297008659059238,
+   "se": 0.01269476519107083,
+   "lo": 0.0033006564590058775,
+   "hi": 0.05610107535284173,
+   "p": 0.02926222299333888,
+   "G": 22,
+   "n": 1958,
+   "pct": 0.030146335968576743,
+   "pct_lo": 0.0033061096235598164,
+   "pct_hi": 0.05770458619817043
+  },
+  "rpv_rupees": {
+   "b": 37.157000704274985,
+   "se": 13.89593445963637,
+   "lo": 8.258823016586742,
+   "hi": 66.05517839196322,
+   "p": 0.014206010986065824,
+   "G": 22,
+   "n": 1958
+  },
+  "visits": {
+   "b": 0.008333313500156578,
+   "se": 0.011656076735036564,
+   "lo": -0.01590682505323367,
+   "hi": 0.03257345205354682,
+   "p": 0.48252353218503385,
+   "G": 22,
+   "n": 1958,
+   "pct": 0.008368132208303347,
+   "pct_lo": -0.015780979662039285,
+   "pct_hi": 0.03310977439159002
+  },
+  "revenue": {
+   "b": 0.038034179406080615,
+   "se": 0.018118287550529133,
+   "lo": 0.00035513777324307216,
+   "hi": 0.07571322103891816,
+   "p": 0.048064575372186634,
+   "G": 22,
+   "n": 1958,
+   "pct": 0.03876673670186115,
+   "pct_lo": 0.0003552008421279229,
+   "pct_hi": 0.07865319475509303
+  },
+  "noshow": {
+   "b": -0.007054250471592362,
+   "se": 0.005709450643577394,
+   "lo": -0.018927703075765273,
+   "hi": 0.004819202132580547,
+   "p": 0.23027394953317734,
+   "G": 22,
+   "n": 1958
+  },
+  "rpv_weighted_pct": 0.029311990208612748,
+  "rpv_collapsed": {
+   "est_pct": 0.030146335968578297,
+   "boot_lo_pct": 0.005977461034111675,
+   "boot_hi_pct": 0.05426072151496575,
+   "perm_p": 0.0248
+  }
+ },
+ "parallel": {
+  "pretrend_slope_pct_per_10wk": -0.0003350467223677267,
+  "pretrend_slope_lo": -0.0054785291654335655,
+  "pretrend_slope_hi": 0.004835036867498754,
+  "pretrend_slope_p": 0.8938234997087833,
+  "placebo_pct": -0.0009707717728854037,
+  "placebo_lo": -0.017816101169605414,
+  "placebo_hi": 0.01616347003913865,
+  "placebo_p": 0.9065831294791252,
+  "joint_lead_p": 0.33850661113121966,
+  "event_pre_max_abs_pct": 0.0375672740105526,
+  "pre_months_total": 18,
+  "pre_months_ci_excl_zero": 2
+ },
+ "event_study": [
+  {
+   "month": "2025-01",
+   "b": -0.00892,
+   "lo": -0.05631,
+   "hi": 0.03846
+  },
+  {
+   "month": "2025-02",
+   "b": 0.005,
+   "lo": -0.03643,
+   "hi": 0.04642
+  },
+  {
+   "month": "2025-03",
+   "b": -0.00514,
+   "lo": -0.03452,
+   "hi": 0.02424
+  },
+  {
+   "month": "2025-04",
+   "b": 0.02593,
+   "lo": -0.00382,
+   "hi": 0.05569
+  },
+  {
+   "month": "2025-05",
+   "b": -0.00283,
+   "lo": -0.04331,
+   "hi": 0.03765
+  },
+  {
+   "month": "2025-06",
+   "b": 0.00157,
+   "lo": -0.04518,
+   "hi": 0.04832
+  },
+  {
+   "month": "2025-07",
+   "b": -0.03688,
+   "lo": -0.0684,
+   "hi": -0.00536
+  },
+  {
+   "month": "2025-08",
+   "b": 0.00018,
+   "lo": -0.03122,
+   "hi": 0.03157
+  },
+  {
+   "month": "2025-09",
+   "b": 0.00932,
+   "lo": -0.02034,
+   "hi": 0.03898
+  },
+  {
+   "month": "2025-10",
+   "b": -9e-05,
+   "lo": -0.03246,
+   "hi": 0.03228
+  },
+  {
+   "month": "2025-11",
+   "b": 0.00807,
+   "lo": -0.02963,
+   "hi": 0.04577
+  },
+  {
+   "month": "2025-12",
+   "b": 0.00555,
+   "lo": -0.01194,
+   "hi": 0.02304
+  },
+  {
+   "month": "2026-01",
+   "b": 0.02822,
+   "lo": -0.02136,
+   "hi": 0.0778
+  },
+  {
+   "month": "2026-02",
+   "b": -0.00461,
+   "lo": -0.05994,
+   "hi": 0.05073
+  },
+  {
+   "month": "2026-03",
+   "b": -0.00846,
+   "lo": -0.03717,
+   "hi": 0.02025
+  },
+  {
+   "month": "2026-04",
+   "b": 0.00816,
+   "lo": -0.04045,
+   "hi": 0.05677
+  },
+  {
+   "month": "2026-05",
+   "b": 0.00338,
+   "lo": -0.03301,
+   "hi": 0.03978
+  },
+  {
+   "month": "2026-06",
+   "b": -0.02846,
+   "lo": -0.04701,
+   "hi": -0.0099
+  },
+  {
+   "month": "2026-07",
+   "b": 0.05211,
+   "lo": 0.01495,
+   "hi": 0.08927
+  },
+  {
+   "month": "2026-08",
+   "b": 0.00665,
+   "lo": -0.03678,
+   "hi": 0.05007
+  },
+  {
+   "month": "2026-09",
+   "b": 0.03839,
+   "lo": -0.01186,
+   "hi": 0.08865
+  }
+ ],
+ "did_segments": [
+  {
+   "family": "Revenue per visit",
+   "segment": "Booked clients",
+   "pct": 0.04604,
+   "lo": 0.01054,
+   "hi": 0.08279,
+   "p": 0.01309,
+   "G": 22,
+   "n_treated_outlets": 14,
+   "p_holm": 0.09165
+  },
+  {
+   "family": "Revenue per visit",
+   "segment": "Walk-ins",
+   "pct": -0.02426,
+   "lo": -0.06156,
+   "hi": 0.01453,
+   "p": 0.20438,
+   "G": 22,
+   "n_treated_outlets": 14,
+   "p_holm": 0.61314
+  },
+  {
+   "family": "Revenue per visit",
+   "segment": "Service: Hair",
+   "pct": 0.04247,
+   "lo": 0.01309,
+   "hi": 0.07269,
+   "p": 0.00643,
+   "G": 22,
+   "n_treated_outlets": 14,
+   "p_holm": 0.05141
+  },
+  {
+   "family": "Revenue per visit",
+   "segment": "Service: Skin & beauty",
+   "pct": 0.04202,
+   "lo": 0.01938,
+   "hi": 0.06516,
+   "p": 0.00083,
+   "G": 22,
+   "n_treated_outlets": 14,
+   "p_holm": 0.0083
+  },
+  {
+   "family": "Revenue per visit",
+   "segment": "Service: Spa & bridal",
+   "pct": 0.04135,
+   "lo": -0.0714,
+   "hi": 0.16779,
+   "p": 0.47025,
+   "G": 22,
+   "n_treated_outlets": 14,
+   "p_holm": 0.86163
+  },
+  {
+   "family": "Revenue per visit",
+   "segment": "Outlet format: Salon",
+   "pct": 0.01525,
+   "lo": -0.02658,
+   "hi": 0.05889,
+   "p": 0.43082,
+   "G": 9,
+   "n_treated_outlets": 6,
+   "p_holm": 0.86163
+  },
+  {
+   "family": "Revenue per visit",
+   "segment": "Outlet format: Salon & Spa",
+   "pct": 0.03123,
+   "lo": -0.00787,
+   "hi": 0.07186,
+   "p": 0.10392,
+   "G": 9,
+   "n_treated_outlets": 6,
+   "p_holm": 0.41568
+  },
+  {
+   "family": "Revenue per visit",
+   "segment": "Outlet format: Spa",
+   "pct": 0.04275,
+   "lo": -0.00378,
+   "hi": 0.09146,
+   "p": 0.06157,
+   "G": 4,
+   "n_treated_outlets": 2,
+   "p_holm": 0.30785
+  },
+  {
+   "family": "Visits",
+   "segment": "Booked clients",
+   "pct": 0.03672,
+   "lo": 0.01202,
+   "hi": 0.06202,
+   "p": 0.0053,
+   "G": 22,
+   "n_treated_outlets": 14,
+   "p_holm": 0.04766
+  },
+  {
+   "family": "Visits",
+   "segment": "Walk-ins",
+   "pct": -0.05293,
+   "lo": -0.10221,
+   "hi": -0.00093,
+   "p": 0.04646,
+   "G": 22,
+   "n_treated_outlets": 14,
+   "p_holm": 0.27879
+  }
+ ],
+ "ab_segments": [
+  {
+   "segment": "Age 18-24",
+   "control": 0.15205,
+   "treatment": 0.09993,
+   "diff": -0.05212,
+   "lo": -0.07532,
+   "hi": -0.02891,
+   "p": 1e-05,
+   "n": 3116,
+   "p_holm": 0.00012
+  },
+  {
+   "segment": "Age 25-34",
+   "control": 0.12129,
+   "treatment": 0.0951,
+   "diff": -0.0262,
+   "lo": -0.04292,
+   "hi": -0.00948,
+   "p": 0.00213,
+   "n": 5301,
+   "p_holm": 0.01493
+  },
+  {
+   "segment": "Age 35-44",
+   "control": 0.106,
+   "treatment": 0.08985,
+   "diff": -0.01615,
+   "lo": -0.03561,
+   "hi": 0.00331,
+   "p": 0.10377,
+   "n": 3586,
+   "p_holm": 0.40329
+  },
+  {
+   "segment": "Age 45+",
+   "control": 0.08795,
+   "treatment": 0.08202,
+   "diff": -0.00594,
+   "lo": -0.03042,
+   "hi": 0.01855,
+   "p": 0.63467,
+   "n": 1997,
+   "p_holm": 0.63467
+  },
+  {
+   "segment": "Returning clients",
+   "control": 0.10589,
+   "treatment": 0.07498,
+   "diff": -0.03091,
+   "lo": -0.04216,
+   "hi": -0.01967,
+   "p": 0.0,
+   "n": 9973,
+   "p_holm": 0.0
+  },
+  {
+   "segment": "New clients",
+   "control": 0.15149,
+   "treatment": 0.13962,
+   "diff": -0.01187,
+   "lo": -0.03366,
+   "hi": 0.00992,
+   "p": 0.28571,
+   "n": 4027,
+   "p_holm": 0.57142
+  },
+  {
+   "segment": "Weekday slot",
+   "control": 0.11131,
+   "treatment": 0.08787,
+   "diff": -0.02343,
+   "lo": -0.03515,
+   "hi": -0.01172,
+   "p": 9e-05,
+   "n": 10022,
+   "p_holm": 0.00088
+  },
+  {
+   "segment": "Weekend slot",
+   "control": 0.13985,
+   "treatment": 0.1059,
+   "diff": -0.03395,
+   "lo": -0.05433,
+   "hi": -0.01357,
+   "p": 0.00109,
+   "n": 3978,
+   "p_holm": 0.00984
+  },
+  {
+   "segment": "Channel: App",
+   "control": 0.12231,
+   "treatment": 0.09524,
+   "diff": -0.02707,
+   "lo": -0.04386,
+   "hi": -0.01028,
+   "p": 0.00158,
+   "n": 5288,
+   "p_holm": 0.01261
+  },
+  {
+   "segment": "Channel: Phone",
+   "control": 0.1127,
+   "treatment": 0.09648,
+   "diff": -0.01622,
+   "lo": -0.0356,
+   "hi": 0.00316,
+   "p": 0.10082,
+   "n": 3828,
+   "p_holm": 0.40329
+  },
+  {
+   "segment": "Channel: Website",
+   "control": 0.14419,
+   "treatment": 0.10558,
+   "diff": -0.03861,
+   "lo": -0.06695,
+   "hi": -0.01027,
+   "p": 0.00758,
+   "n": 2079,
+   "p_holm": 0.03789
+  },
+  {
+   "segment": "Channel: WhatsApp chat",
+   "control": 0.10445,
+   "treatment": 0.07493,
+   "diff": -0.02952,
+   "lo": -0.05063,
+   "hi": -0.00841,
+   "p": 0.00614,
+   "n": 2805,
+   "p_holm": 0.03683
+  }
+ ],
+ "ab_age_interaction_p": 0.12571987746497873,
+ "cuped": {
+  "table": [
+   {
+    "metric": "No-show rate (primary)",
+    "method": "Regression adjustment",
+    "effect_raw": -0.02638,
+    "se_raw": 0.0052,
+    "effect_adj": -0.02576,
+    "se_adj": 0.00518,
+    "variance_reduction": 0.01005,
+    "weeks_needed": 8.90954,
+    "weeks_saved": 0.09046,
+    "ci_lo_adj": -0.03591,
+    "ci_hi_adj": -0.01562
+   },
+   {
+    "metric": "Revenue per booked appointment",
+    "method": "CUPED (pre-period spend)",
+    "effect_raw": 19.20909,
+    "se_raw": 11.35847,
+    "effect_adj": 16.06806,
+    "se_adj": 10.93042,
+    "variance_reduction": 0.07395,
+    "weeks_needed": 8.33444,
+    "weeks_saved": 0.66556,
+    "ci_lo_adj": -5.35556,
+    "ci_hi_adj": 37.49168
+   },
+   {
+    "metric": "Revenue per booked appointment",
+    "method": "Regression adjustment",
+    "effect_raw": 19.20909,
+    "se_raw": 11.35847,
+    "effect_adj": 15.60324,
+    "se_adj": 10.94481,
+    "variance_reduction": 0.07151,
+    "weeks_needed": 8.3564,
+    "weeks_saved": 0.6436,
+    "ci_lo_adj": -5.84858,
+    "ci_hi_adj": 37.05506
+   },
+   {
+    "metric": "60-day retention",
+    "method": "Regression adjustment",
+    "effect_raw": 0.00493,
+    "se_raw": 0.00843,
+    "effect_adj": 0.0004,
+    "se_adj": 0.00812,
+    "variance_reduction": 0.07087,
+    "weeks_needed": 8.36213,
+    "weeks_saved": 0.63787,
+    "ci_lo_adj": -0.01552,
+    "ci_hi_adj": 0.01632
+   }
+  ],
+  "theta_revenue": 0.4610210493920622,
+  "rho_revenue": 0.2673139288554312,
+  "manual_var_reduction_revenue": 0.07142268041664923,
+  "planned_weeks": 9
+ },
+ "did_decision": "GO (keep the change)",
+ "headline": {
+  "ab_decision": "GO",
+  "did_decision": "GO (keep the change)",
+  "claimed_rpv_change_pct": 1.9034616790823078,
+  "control_rpv_change_pct": -1.6469346576935329,
+  "did_rpv_pct": 3.0146335968576743,
+  "did_rpv_lo": 0.33061096235598164,
+  "did_rpv_hi": 5.770458619817043
+ }
+}

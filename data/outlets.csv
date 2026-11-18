@@ -1,0 +1,23 @@
+outlet_id,city,area,format,change_launched,seats,open_year
+O01,Coimbatore,RS Puram,Salon & Spa,Y,8,2017
+O02,Coimbatore,Gandhipuram,Salon & Spa,Y,11,2020
+O03,Coimbatore,Peelamedu,Salon & Spa,Y,13,2023
+O04,Coimbatore,Saibaba Colony,Salon,Y,12,2016
+O05,Coimbatore,Race Course,Salon & Spa,Y,10,2019
+O06,Coimbatore,Singanallur,Salon,Y,10,2021
+O07,Coimbatore,Vadavalli,Salon,Y,12,2019
+O08,Coimbatore,Ganapathy,Salon,Y,10,2016
+O09,Coimbatore,Kuniyamuthur,Salon,Y,9,2021
+O10,Coimbatore,Thudiyalur,Spa,Y,9,2018
+O11,Coimbatore,Saravanampatti,Salon & Spa,Y,9,2022
+O12,Coimbatore,Podanur,Spa,Y,10,2019
+O13,Coimbatore,Town Hall,Salon,Y,12,2022
+O14,Coimbatore,Avinashi Road,Salon & Spa,Y,10,2022
+O15,Tiruppur,Kumaran Road,Salon,N,9,2021
+O16,Tiruppur,Avinashi Rd,Salon & Spa,N,7,2022
+O17,Tiruppur,Pushpa Junction,Salon,N,9,2017
+O18,Tiruppur,Palladam Road,Salon,N,9,2021
+O19,Tiruppur,Khaderpet,Salon & Spa,N,7,2015
+O20,Erode,Perundurai Road,Spa,N,10,2018
+O21,Erode,Brough Road,Salon & Spa,N,7,2022
+O22,Erode,Bhavani Road,Spa,N,9,2014
